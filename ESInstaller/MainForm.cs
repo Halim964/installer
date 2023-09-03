@@ -1,5 +1,6 @@
 ﻿using HDMS.Service;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ESInstaller
@@ -22,9 +23,20 @@ namespace ESInstaller
         private void MainForm_Load(object sender, EventArgs e)
         {
             btnUpdate.Enabled = false;
-            string version = UpdateManager.CheckInstalledVersion();
-            lbInstalledVersion.Text = version;
+            this.Height = 205;
+            CheckInstalledVersion();
+            //Task.Run(async () => await this.updateManager.GetLatestVersion());
             this.updateManager.GetLatestVersion();
+        }
+
+        private void CheckInstalledVersion()
+        {
+            string version = UpdateManager.CheckInstalledVersion();
+            if (version == "Unknwon")
+            {
+                btnUpdate.Text = "Install";
+            }
+            lbInstalledVersion.Text = version;
         }
 
         private void ProgressUpdate(int value)
@@ -35,14 +47,16 @@ namespace ESInstaller
 
         private void InstallationCompleted()
         {
-            MessageBox.Show("Update completed");
+            //MessageBox.Show("Update completed");
+            this.Height = 205;
+            CheckInstalledVersion();
         }
 
         private void OnDownloadComplete()
         {
-            lbStatus.Text = "Status : Installing SIBL";
+            lbStatus.Text = "Status : Installing Version - " + lbLatestVerson.Text;
             this.updateManager.Install();
-            lbStatus.Text = "Status : SIBL Updated";
+            lbStatus.Text = "Status : Installed Version - " + lbLatestVerson.Text;
         }
 
         private void CheckComplete(string version)
@@ -63,7 +77,7 @@ namespace ESInstaller
             btnUpdate.Enabled = false;
             string version = UpdateManager.CheckInstalledVersion();
             lbLatestVerson.Text = version;
-            this.updateManager.GetLatestVersion();
+            Task.Run(async ()=> await this.updateManager.GetLatestVersion());
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -71,6 +85,7 @@ namespace ESInstaller
             var result = MessageBox.Show("Are you sure to update?", "Confirm", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
+                this.Height = 246;
                 lbStatus.Text = "Status : Downloading";
                 btnUpdate.Enabled = false;
                 this.updateManager.StartDownload();
