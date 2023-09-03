@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESInstaller", "ESInstaller\ESInstaller.csproj", "{CC57E4D2-405F-4501-A40D-33B49D74B59B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC57E4D2-405F-4501-A40D-33B49D74B59B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC57E4D2-405F-4501-A40D-33B49D74B59B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC57E4D2-405F-4501-A40D-33B49D74B59B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC57E4D2-405F-4501-A40D-33B49D74B59B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {028A7285-4EC0-4081-B1C7-344CCC2900DA}
+	EndGlobalSection
+EndGlobal
