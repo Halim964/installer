@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Win32;
@@ -20,8 +21,21 @@ namespace HDMS.Service
     {
         private const string LATEST_RELEASE_URL = "https://api.github.com/repos/Halim964/SIBL/releases/latest";
         private const string UNINSTALL_KEY = @"Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{A5CADAA6-F985-43B3-9B0D-2038E0390FEC}_is1";
-        private const string EXE_FILE_PATH = "G:\\Halim\\update-setup.exe";
         private static string DOWNLOAD_URL = "";
+
+        private string EXE_FILE_PATH { 
+            get  {
+                string userProfilePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                string appDirectory = Path.Combine(userProfilePath, "MyAppData");
+
+                // Check if the directory exists, and if not, create it
+                if (!Directory.Exists(appDirectory))
+                {
+                    Directory.CreateDirectory(appDirectory);
+                }
+                return Path.Combine(appDirectory, "sibl.exe");
+            } 
+        }
 
         public Action<string> OnCheckComplete;
         public Action<string> OnError;
@@ -31,7 +45,7 @@ namespace HDMS.Service
 
         public UpdateManager()
         {
-
+            var path = System.Reflection.Assembly.GetExecutingAssembly().Location;
         }
 
         public async Task CheckAndUpdate()
@@ -245,12 +259,12 @@ namespace HDMS.Service
                     }
                     else
                     {
-                        return "Unknown";
+                        return "Not installed";
                     }
                 }
                 else
                 {
-                    return "Unknown";
+                    return "Not installed";
                 }
             }
         }
@@ -276,7 +290,7 @@ namespace HDMS.Service
 
         public static bool HasUpdate(string installedVersion, string LatestVersion)
         {
-            if (installedVersion == "Unknown") return true;
+            if (installedVersion == "Not installed") return true;
             Version version1 = new Version(installedVersion);
             Version version2 = new Version(LatestVersion);
             int comparison = version1.CompareTo(version2);

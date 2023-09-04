@@ -32,7 +32,7 @@ namespace ESInstaller
         private void CheckInstalledVersion()
         {
             string version = UpdateManager.CheckInstalledVersion();
-            if (version == "Unknwon")
+            if (version == "Not installed")
             {
                 btnUpdate.Text = "Install";
             }
