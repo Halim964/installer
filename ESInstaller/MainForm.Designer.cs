@@ -41,6 +41,8 @@ namespace ESInstaller
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialProgressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
             this.lbParcent = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -48,7 +50,7 @@ namespace ESInstaller
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(28, 24);
+            this.materialLabel1.Location = new System.Drawing.Point(30, 107);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(118, 19);
@@ -61,7 +63,7 @@ namespace ESInstaller
             this.lbInstalledVersion.Depth = 0;
             this.lbInstalledVersion.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lbInstalledVersion.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbInstalledVersion.Location = new System.Drawing.Point(163, 25);
+            this.lbInstalledVersion.Location = new System.Drawing.Point(165, 108);
             this.lbInstalledVersion.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbInstalledVersion.Name = "lbInstalledVersion";
             this.lbInstalledVersion.Size = new System.Drawing.Size(118, 19);
@@ -73,7 +75,7 @@ namespace ESInstaller
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(152, 24);
+            this.materialLabel3.Location = new System.Drawing.Point(154, 107);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(5, 19);
@@ -85,7 +87,7 @@ namespace ESInstaller
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(152, 59);
+            this.materialLabel4.Location = new System.Drawing.Point(154, 142);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(5, 19);
@@ -98,7 +100,7 @@ namespace ESInstaller
             this.lbLatestVerson.Depth = 0;
             this.lbLatestVerson.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lbLatestVerson.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbLatestVerson.Location = new System.Drawing.Point(163, 60);
+            this.lbLatestVerson.Location = new System.Drawing.Point(165, 143);
             this.lbLatestVerson.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbLatestVerson.Name = "lbLatestVerson";
             this.lbLatestVerson.Size = new System.Drawing.Size(102, 19);
@@ -110,7 +112,7 @@ namespace ESInstaller
             this.materialLabel6.AutoSize = true;
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel6.Location = new System.Drawing.Point(28, 59);
+            this.materialLabel6.Location = new System.Drawing.Point(30, 142);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(102, 19);
@@ -126,7 +128,7 @@ namespace ESInstaller
             this.btnUpdate.DrawShadows = false;
             this.btnUpdate.HighEmphasis = true;
             this.btnUpdate.Icon = null;
-            this.btnUpdate.Location = new System.Drawing.Point(28, 94);
+            this.btnUpdate.Location = new System.Drawing.Point(30, 197);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdate.Name = "btnUpdate";
@@ -145,7 +147,7 @@ namespace ESInstaller
             this.lbStatus.Depth = 0;
             this.lbStatus.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lbStatus.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbStatus.Location = new System.Drawing.Point(135, 99);
+            this.lbStatus.Location = new System.Drawing.Point(131, 206);
             this.lbStatus.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(1, 0);
@@ -156,7 +158,7 @@ namespace ESInstaller
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.Location = new System.Drawing.Point(27, 164);
+            this.materialLabel5.Location = new System.Drawing.Point(29, 254);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(90, 19);
@@ -166,7 +168,7 @@ namespace ESInstaller
             // materialProgressBar1
             // 
             this.materialProgressBar1.Depth = 0;
-            this.materialProgressBar1.Location = new System.Drawing.Point(123, 173);
+            this.materialProgressBar1.Location = new System.Drawing.Point(125, 263);
             this.materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialProgressBar1.Name = "materialProgressBar1";
             this.materialProgressBar1.Size = new System.Drawing.Size(317, 5);
@@ -178,18 +180,28 @@ namespace ESInstaller
             this.lbParcent.Depth = 0;
             this.lbParcent.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lbParcent.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbParcent.Location = new System.Drawing.Point(447, 166);
+            this.lbParcent.Location = new System.Drawing.Point(448, 256);
             this.lbParcent.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbParcent.Name = "lbParcent";
             this.lbParcent.Size = new System.Drawing.Size(22, 19);
             this.lbParcent.TabIndex = 10;
             this.lbParcent.Text = "0%";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ESInstaller.Properties.Resources.E_Medical;
+            this.pictureBox1.Location = new System.Drawing.Point(164, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(163, 74);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 202);
+            this.ClientSize = new System.Drawing.Size(499, 257);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbParcent);
             this.Controls.Add(this.materialProgressBar1);
             this.Controls.Add(this.materialLabel5);
@@ -201,11 +213,13 @@ namespace ESInstaller
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.lbInstalledVersion);
             this.Controls.Add(this.materialLabel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SIBL Installer";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +237,6 @@ namespace ESInstaller
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialProgressBar materialProgressBar1;
         private MaterialSkin.Controls.MaterialLabel lbParcent;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

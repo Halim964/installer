@@ -1,5 +1,9 @@
 ﻿using HDMS.Service;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -7,10 +11,16 @@ namespace ESInstaller
 {
     public partial class MainForm : Form
     {
+        private const int WM_NCCALCSIZE = 0x83;
+        private const int WM_NCPAINT = 0x85;
+        private int borderWidth = 10;
+        private int borderRadius = 10;
+
         UpdateManager updateManager;
         public MainForm()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
 
             this.updateManager = new UpdateManager();
             this.updateManager.OnCheckComplete = CheckComplete;
@@ -23,7 +33,7 @@ namespace ESInstaller
         private void MainForm_Load(object sender, EventArgs e)
         {
             btnUpdate.Enabled = false;
-            this.Height = 205;
+            this.Height = 296;
             CheckInstalledVersion();
             //Task.Run(async () => await this.updateManager.GetLatestVersion());
             this.updateManager.GetLatestVersion();
@@ -48,7 +58,7 @@ namespace ESInstaller
         private void InstallationCompleted()
         {
             //MessageBox.Show("Update completed");
-            this.Height = 205;
+            this.Height = 352;
             CheckInstalledVersion();
         }
 
@@ -92,4 +102,5 @@ namespace ESInstaller
             }
         }
     }
+
 }
