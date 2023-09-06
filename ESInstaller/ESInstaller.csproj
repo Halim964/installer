@@ -61,7 +61,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>setup.ico</ApplicationIcon>
+    <ApplicationIcon>software_installer.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -106,7 +106,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="ESInstaller_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -134,7 +133,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\software_installer.png" />
+    <Content Include="software_installer.ico" />
     <None Include="Resources\E-Medical.png" />
+    <None Include="Resources\close_mouse_leave.png" />
+    <None Include="Resources\updating.gif" />
+    <None Include="Resources\close_mouse_leave1.png" />
     <Content Include="setup.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
